@@ -98,7 +98,7 @@ workflows:
       - aws-ecs/deploy-service-update:
           requires:
             - aws-ecr/build-and-push-image
-          family: "${MY_APP_PREFIX}-task"
-          cluster-name: "${MY_APP_PREFIX}-cluster"
-          service-name: "${MY_APP_PREFIX}-service"
+          family: "ecs-rails-task"
+          cluster-name: "Rails-Nginx"
+          service-name: "exs-rails-service"
           container-image-name-updates: "container=app,tag=${CIRCLE_SHA1}"
